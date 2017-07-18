@@ -56,11 +56,8 @@ namespace maduka_Azure_CDN.Controllers
 
             try
             {
-                for (int i = 0; i < query.contentPaths.Count; i++)
-                {
-                    // 執行清理CDN檔案路徑快取的動作
-                    result += client.UploadString(uri, JsonConvert.SerializeObject(query));
-                }
+                // 執行清理CDN檔案路徑快取的動作
+                result = client.UploadString(uri, JsonConvert.SerializeObject(query));
             }
             catch (Exception ex)
             {
